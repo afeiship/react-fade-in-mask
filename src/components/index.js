@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from 'noop';
-import objectAssign from 'object-assign';
 
 const CLASS_NAME = 'react-fade-in-mask';
 
-export default class extends Component {
-  /*===properties start===*/
+export default class ReactFadeInMask extends Component {
+  static displayName = CLASS_NAME;
   static propTypes = {
+    /**
+     * The extended className for component.
+     */
     className: PropTypes.string,
-    value: PropTypes.bool,
-    onChange: PropTypes.func
+    /**
+     * The visible value.
+     */
+    value: PropTypes.bool
   };
 
   static defaultProps = {
-    onChange: noop
+    value: false
   };
-  /*===properties end===*/
 
   render() {
     const { className, value, ...props } = this.props;
